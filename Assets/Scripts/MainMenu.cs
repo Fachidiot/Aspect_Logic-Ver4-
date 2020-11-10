@@ -5,7 +5,11 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
-    public Text Score;
+    [Range(5, 30)]
+    public int Count;
+    [Range(30, 480)]
+    public int Time;
+    
     public Text AssistantOn;
     public Text AssistantOff;
     
@@ -28,4 +32,5 @@ public class MainMenu : MonoBehaviour
             m_bAssistant = false;
         }
     }
+
 }

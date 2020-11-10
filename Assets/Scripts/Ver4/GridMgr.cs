@@ -52,6 +52,24 @@ public class GridMgr : MonoBehaviour
         //Debug.Log(m_14List.Count);
     }
 
+    public static void ShuffleList<T>(List<T> list)
+    {
+        int random1;
+        int random2;
+
+        T temp;
+
+        for (int index = 0; index < list.Count; ++index)
+        {
+            random1 = Random.Range(0, list.Count);
+            random2 = Random.Range(0, list.Count);
+
+            temp = list[random1];
+            list[random1] = list[random2];
+            list[random2] = temp;
+        }
+    }
+
     void ListSet()
     {
         m_WordList = new List<Word>();
@@ -113,7 +131,6 @@ public class GridMgr : MonoBehaviour
                     break;
             }
         }
-
     }
 
     GridInfo LoadMapData(string path = DefaultPath)
@@ -248,6 +265,7 @@ public class GridMgr : MonoBehaviour
                     break;
                 case 2:
                     var templist2 = GetList(m_TempGrid.CrossInfo2[2]);
+                    ShuffleList<Word>(templist2);
 
                     for (int j = 0; j < templist2.Count; j++)
                     {
@@ -316,6 +334,7 @@ public class GridMgr : MonoBehaviour
                     break;
                 case 3:
                     var templist3 = GetList(m_TempGrid.CrossInfo3[2]);
+                    ShuffleList<Word>(templist3);
 
                     for (int j = 0; j < templist3.Count; j++)
                     {
@@ -384,6 +403,7 @@ public class GridMgr : MonoBehaviour
                     break;
                 case 4:
                     var templist4 = GetList(m_TempGrid.CrossInfo4[2]);
+                    ShuffleList<Word>(templist4);
 
                     for (int j = 0; j < templist4.Count; j++)
                     {
@@ -452,6 +472,7 @@ public class GridMgr : MonoBehaviour
                     break;
                 case 5:
                     var templist5 = GetList(m_TempGrid.CrossInfo5[2]);
+                    ShuffleList<Word>(templist5);
 
                     for (int j = 0; j < templist5.Count; j++)
                     {
@@ -520,6 +541,7 @@ public class GridMgr : MonoBehaviour
                     break;
                 case 6:
                     var templist6 = GetList(m_TempGrid.CrossInfo6[2]);
+                    ShuffleList<Word>(templist6);
 
                     for (int j = 0; j < templist6.Count; j++)
                     {
@@ -588,6 +610,7 @@ public class GridMgr : MonoBehaviour
                     break;
                 case 7:
                     var templist7 = GetList(m_TempGrid.CrossInfo7[2]);
+                    ShuffleList<Word>(templist7);
 
                     for (int j = 0; j < templist7.Count; j++)
                     {
@@ -656,6 +679,7 @@ public class GridMgr : MonoBehaviour
                     break;
                 case 8:
                     var templist8 = GetList(m_TempGrid.CrossInfo8[2]);
+                    ShuffleList<Word>(templist8);
 
                     for (int j = 0; j < templist8.Count; j++)
                     {
@@ -724,6 +748,7 @@ public class GridMgr : MonoBehaviour
                     break;
                 case 9:
                     var templist9 = GetList(m_TempGrid.CrossInfo9[2]);
+                    ShuffleList<Word>(templist9);
 
                     for (int j = 0; j < templist9.Count; j++)
                     {
@@ -792,6 +817,7 @@ public class GridMgr : MonoBehaviour
                     break;
                 case 10:
                     var templist10 = GetList(m_TempGrid.CrossInfo10[2]);
+                    ShuffleList<Word>(templist10);
 
                     for (int j = 0; j < templist10.Count; j++)
                     {
@@ -860,6 +886,7 @@ public class GridMgr : MonoBehaviour
                     break;
                 case 11:
                     var templist11 = GetList(m_TempGrid.CrossInfo11[2]);
+                    ShuffleList<Word>(templist11);
 
                     for (int j = 0; j < templist11.Count; j++)
                     {
@@ -928,6 +955,7 @@ public class GridMgr : MonoBehaviour
                     break;
                 case 12:
                     var templist12 = GetList(m_TempGrid.CrossInfo12[2]);
+                    ShuffleList<Word>(templist12);
 
                     for (int j = 0; j < templist12.Count; j++)
                     {
@@ -996,6 +1024,7 @@ public class GridMgr : MonoBehaviour
                     break;
                 case 13:
                     var templist13 = GetList(m_TempGrid.CrossInfo13[2]);
+                    ShuffleList<Word>(templist13);
 
                     for (int j = 0; j < templist13.Count; j++)
                     {
@@ -1064,6 +1093,7 @@ public class GridMgr : MonoBehaviour
                     break;
                 case 14:
                     var templist14 = GetList(m_TempGrid.CrossInfo14[2]);
+                    ShuffleList<Word>(templist14);
 
                     for (int j = 0; j < templist14.Count; j++)
                     {
@@ -1132,6 +1162,7 @@ public class GridMgr : MonoBehaviour
                     break;
                 case 15:
                     var templist15 = GetList(m_TempGrid.CrossInfo15[2]);
+                    ShuffleList<Word>(templist15);
 
                     for (int j = 0; j < templist15.Count; j++)
                     {

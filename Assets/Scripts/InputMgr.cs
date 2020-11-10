@@ -13,6 +13,10 @@ public class InputMgr : MonoBehaviour
     public Image Congratulations;
     public Image Correct;
     public Image Wrong;
+    [Header("MainMenu")]
+    public Text RewardCount;
+    public Text TimeSet;
+    public Text CountSet;
     [Header("Text UI")]
     public Text CurrentHint;
     public Text QuestionCount;
@@ -262,7 +266,7 @@ public class InputMgr : MonoBehaviour
             // 문제를 맞혔을때만 다음으로 넘어가거나 뒤로 돌아가게 해줘야함
             if(Assistant)
             {
-                Next(true);
+                Next(false);
             }
         }
         else
@@ -468,6 +472,7 @@ public class InputMgr : MonoBehaviour
                 return;
             }
         }
+        Debug.Log(m_Answer.Answer);
         HighLight();
         if(Assistant)
         {
@@ -496,6 +501,7 @@ public class InputMgr : MonoBehaviour
         {
             return;
         }
+        Debug.Log(m_Answer.Answer);
         HighLight();
         if (Assistant)
         {
@@ -586,5 +592,41 @@ public class InputMgr : MonoBehaviour
     public void Pause(bool power)
     {
         m_Power = power;
+    }
+
+    public void CountUp()
+    {
+        if (MaxCount >= 30)
+            return;
+        MaxCount = MaxCount + 5;
+        RewardCount.text = ((int)((MaxCount * (510 - MaxTime)) / 60)).ToString() + " 개";
+        CountSet.text = MaxCount.ToString() + " 개";
+    }
+
+    public void CountDown()
+    {
+        if (MaxCount <= 5)
+            return;
+        MaxCount = MaxCount - 5;
+        RewardCount.text = ((int)((MaxCount * (510 - MaxTime)) / 60)).ToString() + " 개";
+        CountSet.text = MaxCount.ToString() + " 개";
+    }
+
+    public void TimeUp()
+    {
+        if (MaxTime >= 480)
+            return;
+        MaxTime = MaxTime + 30;
+        RewardCount.text = ((int)((MaxCount * (510 - MaxTime)) / 60)).ToString() + " 개";
+        TimeSet.text = (MaxTime / 60).ToString() + " 분";
+    }
+
+    public void TimeDown()
+    {
+        if (MaxTime <= 30)
+            return;
+        MaxTime = MaxTime - 30;
+        RewardCount.text = ((int)((MaxCount * (510 - MaxTime)) / 60)).ToString() + " 개";
+        TimeSet.text = (MaxTime / 60).ToString() + " 분";
     }
 }
